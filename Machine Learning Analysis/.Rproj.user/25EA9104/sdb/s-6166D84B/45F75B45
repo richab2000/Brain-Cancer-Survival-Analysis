@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "#Richa Bhattacharya\n#Mentor David Cohn\n#Machine learning portion \n\ncode.directory= \"Machine Learning Analysis\"\nsetwd = code.directory\n\n# Loading libraries needed\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(tidyr)\nlibrary(survival)\nlibrary(survminer)\nlibrary(caret)\nlibrary(stats)\nlibrary(randomForest)\nlibrary(e1071)\n\n# Read in data\ndata.extract = read.csv('dataextract.csv', stringsAsFactors = FALSE)\n#source(paste(code.directory, 'summary_statistics_copy.R', sep = '/'))\n#source(paste(code.directory, 'kaplan_meier_analysis_copy.R', sep = '/'))\n\nfiltered.data %>%\nsummarize(mean = mean(Survival.Months))\n\nfiltered.data <- filter(data.extract, Survival.Status == 1)\nfiltered.data <- mutate(filtered.data,g.or.l = ifelse(Survival.Months > mean(Survival.Months), \">m\", \"<m\"))\nfiltered.data$g.or.l = as.factor(filtered.data$g.or.l)\n",
+    "created" : 1503880598566.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "876030451",
+    "id" : "45F75B45",
+    "lastKnownWriteTime" : 1503895415,
+    "last_content_update" : 1503895415392,
+    "path" : "~/BrainCancerSurvivalAnalysis/Machine Learning Analysis/Machine Learning Portion.R",
+    "project_path" : "Machine Learning Portion.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
